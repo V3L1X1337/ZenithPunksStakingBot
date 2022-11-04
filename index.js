@@ -51,8 +51,10 @@ bot.on('message', async (msg) => {
 
         const balance = ethers.utils.formatEther(await provider.getBalance(contract.address)).toString().substring(0,7);
 
+        const totalStaked = (await contract.totalStaked()).toString();
+
         bot.sendMessage(chatId,
-            `Staking pool balance: <b>${balance} ZENITH</b>.`,{
+            `Staking pool balance: <b>${balance} ZENITH</b>.\nTotal staked: <b>${totalStaked} Punks</b>.`,{
             parse_mode: 'HTML',
             reply_markup: JSON.stringify({
             inline_keyboard: [

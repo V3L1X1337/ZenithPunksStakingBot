@@ -36,13 +36,8 @@ const NETWORK_SETTINGS = {
 }
 
 const TelegramApi = require('node-telegram-bot-api');
-const token = '5672187719:AAGQ15UqpL5LRUCvC64xpZLyCkgbE_964UI';
 
-const stakeOptions = {
-    
-}
-
-const bot = new TelegramApi(token, {
+const bot = new TelegramApi(process.env.BOT_TOKEN, {
     polling:true
 });
 

@@ -45,7 +45,7 @@ bot.on('message', async (msg) => {
     const text = msg.text;
     const chatId = msg.chat.id;
 
-    if(text == '/pool'){
+    if(text == '/pool' || text == '/pool@ZenithPunksStaking_bot'){
         const provider = new ethers.providers.JsonRpcProvider(ZENITH_PROVIDER, NETWORK_SETTINGS);
         const contract = new ethers.Contract(STAKING_CONTRACT, STAKING_ABI, provider);
 
